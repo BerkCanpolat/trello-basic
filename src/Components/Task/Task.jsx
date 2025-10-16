@@ -14,7 +14,7 @@ const filteredTasks = task.filter((t) =>t.status === status && t.task.toLowerCas
       <h2>{title}</h2>
       <DropArea onDrop={() => onDrop(status,0)}/>
       {
-        filteredTasks.length == 0 ? <p className='empty-message'> <FaClipboardList className='empty-icon' color='white' size={200}/> Henüz birşey eklemedin..</p> : (
+        filteredTasks.length == 0 ? <p className='empty-message'> <FaClipboardList className='empty-icon' color='white' size={200}/> You haven't added anything yet.</p> : (
             <div>
                 {
                   task.map((tasks, index) => tasks.status === status && (
