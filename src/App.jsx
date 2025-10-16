@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import Task from "./Components/Task/Task";
+import ModalCard from "./Components/Modal/ModalCard";
+
+const getTaskLocaleStorage = localStorage.getItem("task");
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [task, setTask] = useState(JSON.parse(getTaskLocaleStorage) || []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("task", JSON.stringify(task));
+  }, [task])
+  
+
+  const handleRemoveTasks = (index) => {
+    const itemRemove = task.filter((item, i) => i !== index);
+    setTask(itemRemove);
+  } 
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="mainApp">
+
+      <div className="headerApp">
+      <h1>Tasks</h1>
+
+      <button onClick={() => setIsModalOpen(true)} className="open-btn">
+        Add Task
+      </button>
+
+      <ModalCard isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} setTask={setTask}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <main className="mainTasks">
+        <Task title="To do" task={task} status="todo" handleRemoveTasks={handleRemoveTasks} />
+        <Task title="Doing" task={task} status="doing" handleRemoveTasks={handleRemoveTasks} />
+        <Task title="Done" task={task} status="done" handleRemoveTasks={handleRemoveTasks}/>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;

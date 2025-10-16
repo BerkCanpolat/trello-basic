@@ -1,0 +1,13 @@
+.task-wrapper .task-tags button {
+    padding: .5rem .8rem;
+    border: 1px solid #dfe3e6;
+    border-radius: 1rem;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all .5s ease;
+}
+
+.task-wrapper .task-tags button:where(:hover, :focus-visible):not(:active) {
+    background-color: pink;
+}

@@ -1,0 +1,96 @@
+.task-column {
+    width: 100%;
+    max-width: 28rem;
+    border-radius: .5rem;
+    background-color: lightsteelblue;
+    padding: .5rem 1rem;
+}
+
+.task-column h2 {
+    margin-block-end: 1.5rem;
+}
+
+.task-card {
+    padding: 1rem .5rem;
+    border-radius: .2rem;
+    border: 1px solid #dfe3e6;
+    background-color: white;
+    margin-block: 1rem;
+    cursor: pointer;
+}
+
+.task-card p {
+    line-height: 1.3rem;
+    font-size: 15px;
+    margin-block-end: 2rem;
+}
+
+.task-card .task-card-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.bottom-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 250px;
+}
+
+.bottom-tags button {
+    padding: .4rem .7rem;
+    border: 1px solid #dfe3e6;
+    border-radius: 1rem;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 10px;
+    transition: all .5s ease;
+    margin-right: .4rem;
+    margin-bottom: .3rem;
+}
+
+.bottom-tags button:where(:hover, :focus-visible):not(:active) {
+    background-color: pink;
+    transform: scale(.9);
+}
+
+.bottom-del button {
+    padding: .4rem .7rem;
+    border-radius: 50%;
+    background-color: crimson;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.bottom-del button:where(:hover, :focus-visible):not(:active) {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+.task-date {
+    margin-block-start: 1rem;
+    font-size: .8rem;
+    color: lightslategray;
+    font-weight: bold;
+}
+
+.empty-message {
+  color: black;
+  font-style: italic;
+  font-size: 1.2rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon {
+    margin-block: 1.5rem;
+}
