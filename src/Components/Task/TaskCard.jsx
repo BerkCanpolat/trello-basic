@@ -1,9 +1,12 @@
 import Tag from "../Tag/Tag"
 
 
-const TaskCard = ({ title, tags, date, index, handleRemoveTasks }) => {
+const TaskCard = ({ title, tags, date, index, handleRemoveTasks, setActiveCard }) => {
   return (
-    <div className="task-card">
+    <div className="task-card"
+    draggable
+    onDragStart={() => setActiveCard(index)}
+    onDragEnd={() => setActiveCard(null)}>
         <p>{title}</p>
         <div className="task-card-bottom">
           <div className="bottom-tags">
