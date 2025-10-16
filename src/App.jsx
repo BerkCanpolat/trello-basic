@@ -9,6 +9,7 @@ function App() {
   const [task, setTask] = useState(JSON.parse(getTaskLocaleStorage) || []);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setactiveCard] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     localStorage.setItem("task", JSON.stringify(task));
@@ -34,10 +35,22 @@ function App() {
     setTask(updatedTasks);
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div className="mainApp">
       <div className="headerApp">
         <h1>Tasks</h1>
+
+        <input
+          type="text"
+          placeholder="Search task..."
+          value={searchTerm}
+          onChange={handleSearch}
+          className="search-input"
+        />
 
         <button onClick={() => setIsModalOpen(true)} className="open-btn">
           Add Task
@@ -58,6 +71,7 @@ function App() {
           handleRemoveTasks={handleRemoveTasks}
           setActiveCard={setactiveCard}
           onDrop={onDrop}
+          searchTerm={searchTerm}
         />
         <Task
           title="Doing"
@@ -66,6 +80,7 @@ function App() {
           handleRemoveTasks={handleRemoveTasks}
           setActiveCard={setactiveCard}
           onDrop={onDrop}
+          searchTerm={searchTerm}
         />
         <Task
           title="Done"
@@ -74,6 +89,7 @@ function App() {
           handleRemoveTasks={handleRemoveTasks}
           setActiveCard={setactiveCard}
           onDrop={onDrop}
+          searchTerm={searchTerm}
         />
       </main>
     </div>

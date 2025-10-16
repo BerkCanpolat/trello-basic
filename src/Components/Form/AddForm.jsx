@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Tag from "../Tag/Tag";
 import "./AddForm.css";
+import CustomSelect from "../Select/Select";
 
 const AddForm = ({ setTask, onClose }) => {
+    const statusOptions = ["todo", "doing", "done"];
     const [taskData, setTaskData] = useState({
         task: "",
         status: "todo",
@@ -73,11 +75,7 @@ const AddForm = ({ setTask, onClose }) => {
           </div>
 
           <div className="task-status">
-            <select value={taskData.status} onChange={handleOnChange} name="status">
-              <option value="todo">To do</option>
-              <option value="doing">Doing</option>
-              <option value="done">Done</option>
-            </select>
+            <CustomSelect options={statusOptions} value={taskData.status} onChange={(val) => setTaskData(prev => ({...prev, status: val}))}/>
             <button onClick={onClose} type='submit'>Add</button>
           </div>
 

@@ -4,8 +4,10 @@ import TaskCard from './TaskCard';
 import { FaClipboardList } from 'react-icons/fa6';
 import DropArea from '../Drop/DropArea';
 
-const Task = ({ title, task, status, handleRemoveTasks, setActiveCard, onDrop }) => {
-const filteredTasks = task.filter((t) => t.status === status);
+const Task = ({ title, task, status, handleRemoveTasks, setActiveCard, onDrop, searchTerm }) => {
+// const filteredTasks = task.filter((t) => t.status === status);
+const filteredTasks = task.filter((t) =>t.status === status && t.task.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   return (
     <section className="task-column">

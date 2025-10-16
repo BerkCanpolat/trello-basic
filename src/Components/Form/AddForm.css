@@ -58,3 +58,56 @@ form input {
     transform: scale(1.1);
     background-color: greenyellow;
 }
+
+@media (max-width: 568px) {
+  .headerForm {
+    margin-block-start: 1rem;
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  .headerForm form {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  form input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .task-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .task-wrapper .task-tags {
+    gap: 0.5rem;
+  }
+
+    .task-wrapper .task-status {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+   .task-wrapper .task-status select,
+  .task-wrapper .task-status button {
+    width: 100%;
+  }
+
+
+  .task-wrapper .task-status select {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .task-wrapper .task-status button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}

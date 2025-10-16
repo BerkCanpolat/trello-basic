@@ -94,3 +94,73 @@
 .empty-icon {
     margin-block: 1.5rem;
 }
+
+@media (max-width: 568px) {
+
+  .task-column {
+    width: 95%;
+    max-width: 100%;
+    padding: 0.5rem;
+    margin-inline: auto;
+  }
+
+  .task-column h2 {
+    font-size: 1.2rem;
+    margin-block-end: 1rem;
+    text-align: center;
+  }
+
+  .task-card {
+    padding: 0.8rem;
+    margin-block: 0.8rem;
+    border-radius: 0.3rem;
+    border: 1px solid #dfe3e6;
+    background-color: white;
+  }
+
+  .task-card p {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    margin-block-end: 1rem;
+  }
+
+  .task-card .task-card-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .bottom-tags {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .bottom-tags button {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+  }
+
+  .bottom-del button {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .task-date {
+    font-size: 0.7rem;
+    margin-block-start: 0.5rem;
+  }
+
+  .empty-message {
+    font-size: 1rem;
+    gap: 0.8rem;
+  }
+
+  .empty-icon {
+    margin-block: 1rem;
+    width: 80px;
+    height: 80px;
+  }
+
+}
